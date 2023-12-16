@@ -1,2 +1,2 @@
-Demo DecOps Intensive Course
+Demo DevOps Intensive Course
 Week 4
