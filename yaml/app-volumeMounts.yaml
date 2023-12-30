@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: myapp-pod
+spec:
+  containers:
+  - name: myapp-container
+    image: myapp-image:latest
+    
+    volumeMounts:
+    - name: myapp-storage
+      mountPath: /app/data
+  volumes:
+  - name: myapp-storage
+    emptyDir: {}

@@ -1,0 +1,18 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: my-job
+spec:
+  template:
+    spec:
+      containers:
+      - name: my-job-container
+        image: my-container-image:latest
+        lifecycle:
+          postStart:
+            exec:
+              command: ["/bin/sh", "-c", "echo Hello from the postStart hook"]
+          preStop:
+            exec:
+              command: ["/bin/sh", "-c", "sleep 5; echo Hello from the preStop hook"]
+      restartPolicy: Never
